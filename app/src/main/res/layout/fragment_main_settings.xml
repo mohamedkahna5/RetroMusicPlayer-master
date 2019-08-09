@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:background="@color/md_black_1000">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/buyProContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="6dp"
+            app:cardUseCompatPadding="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/titleContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@+id/text3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <code.name.monkey.appthemehelper.common.views.ATEPrimaryTextView
+                        android:id="@+id/text"
+                        style="@style/TextAppearance.MaterialComponents.Overline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="16dp"
+                        android:paddingTop="16dp"
+                        android:paddingEnd="0dp"
+                        android:text="@string/upgrade_to_premium" />
+
+                    <code.name.monkey.appthemehelper.common.views.ATEAccentTextView
+                        android:id="@+id/title"
+                        style="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="0dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/buy_pro"
+                        android:textColor="@color/md_white_1000" />
+
+                    <code.name.monkey.appthemehelper.common.views.ATEPrimaryTextView
+                        android:id="@+id/text2"
+                        style="@style/TextAppearance.MaterialComponents.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="0dp"
+                        android:text="@string/pro_summary"
+                        android:textColor="@color/md_white_1000" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/text3"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="16dp"
+                    app:srcCompat="@drawable/promotional"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/titleContainer" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buyPremium"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/premium"
+                    app:icon="@drawable/ic_diamond_stone_white_24dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/titleContainer" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:id="@+id/generalSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?rectSelector"
+            android:gravity="center_vertical"
+            android:minHeight="72dp"
+            android:orientation="horizontal">
+
+            <code.name.monkey.retromusic.views.ColorIconsImageView
+                android:id="@+id/general_settings_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:padding="10dp"
+                app:iconBackgroundColor="@color/md_blue_A400"
+                app:srcCompat="@drawable/ic_theme_palette_white_24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <code.name.monkey.appthemehelper.common.views.ATEPrimaryTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:singleLine="true"
+                    android:text="@string/general_settings_title"
+                    android:textSize="@dimen/ate_default_textsize_subheading"
+                    app:fontFamily="@font/circular_std_medium" />
+
+                <code.name.monkey.appthemehelper.common.views.ATESecondaryTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:maxLines="4"
+                    android:text="@string/general_settings_summary"
+                    android:textSize="@dimen/ate_default_textsize_body"
+                    tools:text="Summary" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nowPlayingSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?rectSelector"
+            android:gravity="center_vertical"
+            android:minHeight="72dp"
+            android:orientation="horizontal">
+
+            <code.name.monkey.retromusic.views.ColorIconsImageView
+                android:id="@+id/now_playing_settings_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:padding="10dp"
+                app:iconBackgroundColor="@color/md_red_A400"
+                app:srcCompat="@drawable/ic_play_circle_filled_white_24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <code.name.monkey.appthemehelper.common.views.ATEPrimaryTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:singleLine="true"
+                    android:text="@string/now_playing"
+                    android:textSize="@dimen/ate_default_textsize_subheading"
+                    app:fontFamily="@font/circular_std_medium" />
+
+                <code.name.monkey.appthemehelper.common.views.ATESecondaryTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:maxLines="4"
+                    android:text="@string/now_playing_summary"
+                    android:textSize="@dimen/ate_default_textsize_body" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/audioSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?rectSelector"
+            android:gravity="center_vertical"
+            android:minHeight="72dp"
+            android:orientation="horizontal">
+
+            <code.name.monkey.retromusic.views.ColorIconsImageView
+                android:id="@+id/audio_settings_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:padding="10dp"
+                app:iconBackgroundColor="@color/md_deep_purple_A400"
+                app:srcCompat="@drawable/ic_volume_up_white_24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <code.name.monkey.appthemehelper.common.views.ATEPrimaryTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:singleLine="true"
+                    android:text="@string/pref_header_audio"
+                    android:textSize="@dimen/ate_default_textsize_subheading"
+                    app:fontFamily="@font/circular_std_medium" />
+
+                <code.name.monkey.appthemehelper.common.views.ATESecondaryTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:maxLines="4"
+                    android:text="@string/audio_settings_summary"
+                    android:textSize="@dimen/ate_default_textsize_body" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/personalizeSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?rectSelector"
+            android:gravity="center_vertical"
+            android:minHeight="72dp"
+            android:orientation="horizontal">
+
+            <code.name.monkey.retromusic.views.ColorIconsImageView
+                android:id="@+id/personalize_settings_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:padding="10dp"
+                app:iconBackgroundColor="@color/md_teal_A400"
+                app:srcCompat="@drawable/ic_hdr_strong_white_24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <code.name.monkey.appthemehelper.common.views.ATEPrimaryTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:singleLine="true"
+                    android:text="@string/personalize"
+                    android:textSize="@dimen/ate_default_textsize_subheading"
+                    app:fontFamily="@font/circular_std_medium" />
+
+                <code.name.monkey.appthemehelper.common.views.ATESecondaryTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:maxLines="4"
+                    android:text="@string/personalize_settings_summary"
+                    android:textSize="@dimen/ate_default_textsize_body" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/imageSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?rectSelector"
+            android:gravity="center_vertical"
+            android:minHeight="72dp"
+            android:orientation="horizontal">
+
+            <code.name.monkey.retromusic.views.ColorIconsImageView
+                android:id="@+id/image_settings_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:padding="10dp"
+                app:iconBackgroundColor="@color/md_deep_orange_A400"
+                app:srcCompat="@drawable/ic_image_white_24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <code.name.monkey.appthemehelper.common.views.ATEPrimaryTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:singleLine="true"
+                    android:text="@string/pref_header_images"
+                    android:textSize="@dimen/ate_default_textsize_subheading"
+                    app:fontFamily="@font/circular_std_medium" />
+
+                <code.name.monkey.appthemehelper.common.views.ATESecondaryTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:maxLines="4"
+                    android:text="@string/image_settings_summary"
+                    android:textSize="@dimen/ate_default_textsize_body" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/notificationSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?rectSelector"
+            android:gravity="center_vertical"
+            android:minHeight="72dp"
+            android:orientation="horizontal">
+
+            <code.name.monkey.retromusic.views.ColorIconsImageView
+                android:id="@+id/notification_settings_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:padding="10dp"
+                app:iconBackgroundColor="@color/md_yellow_A400"
+                app:srcCompat="@drawable/ic_notifications_active_white_24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <code.name.monkey.appthemehelper.common.views.ATEPrimaryTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:singleLine="true"
+                    android:text="@string/notification"
+                    android:textSize="@dimen/ate_default_textsize_subheading"
+                    app:fontFamily="@font/circular_std_medium" />
+
+                <code.name.monkey.appthemehelper.common.views.ATESecondaryTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:maxLines="4"
+                    android:text="@string/notification_settings_summary"
+                    android:textSize="@dimen/ate_default_textsize_body" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/otherSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?rectSelector"
+            android:gravity="center_vertical"
+            android:minHeight="72dp"
+            android:orientation="horizontal">
+
+            <code.name.monkey.retromusic.views.ColorIconsImageView
+                android:id="@+id/other_settings_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:padding="10dp"
+                app:iconBackgroundColor="@color/md_indigo_A400"
+                app:srcCompat="@drawable/ic_testing_white_24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <code.name.monkey.appthemehelper.common.views.ATEPrimaryTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:singleLine="true"
+                    android:text="@string/others"
+                    android:textSize="@dimen/ate_default_textsize_subheading"
+                    app:fontFamily="@font/circular_std_medium" />
+
+                <code.name.monkey.appthemehelper.common.views.ATESecondaryTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:maxLines="4"
+                    android:text="@string/other_settings_summary"
+                    android:textSize="@dimen/ate_default_textsize_body" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/aboutSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?rectSelector"
+            android:gravity="center_vertical"
+            android:minHeight="72dp"
+            android:orientation="horizontal">
+
+            <code.name.monkey.retromusic.views.ColorIconsImageView
+                android:id="@+id/about_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:padding="10dp"
+                app:iconBackgroundColor="@color/md_light_green_A400"
+                app:srcCompat="@drawable/ic_info_outline_white_24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <code.name.monkey.appthemehelper.common.views.ATEPrimaryTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:singleLine="true"
+                    android:text="@string/action_about"
+                    android:textSize="@dimen/ate_default_textsize_subheading"
+                    app:fontFamily="@font/circular_std_medium" />
+
+                <code.name.monkey.appthemehelper.common.views.ATESecondaryTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:maxLines="4"
+                    android:text="@string/about_settings_summary"
+                    android:textSize="@dimen/ate_default_textsize_body" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
